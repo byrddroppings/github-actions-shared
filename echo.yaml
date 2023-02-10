@@ -1,0 +1,16 @@
+name: 'echo'
+
+on:
+  workflow-dispatch:
+    inputs:
+      name:
+        type: string
+        required: true
+
+jobs:
+  echo:
+    name: 'echo'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - run: echo "hello ${{ inputs.name }}"
+
